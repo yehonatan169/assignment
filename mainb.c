@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h> 
 
-
 int main()
 {
   char a;
@@ -13,37 +12,34 @@ int main()
   {
     if(a=='A')
     {
-      A(mat);
+      A();
+      ans[V][V] = floydWarshall(mat);
       readed = 1;
-      printf("enter\n A: to read new matrix\n B: to calculate if there is a route between two vertexes \n C: to print the shortest route between two vertexes\n D: to close program");
-      scanf("%c",&a);
     }
     else
     {
       if(readed==0)
       {
-          printf("error graph wasn't readed");
-          printf("enter\n A: to read new matrix\n B: to calculate if there is a route between two vertexes \n C: to print the shortest route between two vertexes\n D: to close program");
+        printf("error graph wasn't readed");
       }
       else
       {
         printf("enter two vertexes\n");
         scanf("%d",&i);
         scanf("%d",&j);
+    
+        if(a=='B')
+        {
+          B(i, j);
+        }
+        if(a=='C')
+        {
+           C(i, j);
+        }
       }
     }
-    int ans [V][V]=floydWarshall(mat);
-    if(a=='B')
-    {
-      B(mat, i, j);
-      printf("enter\n A: to read new matrix\n B: to calculate if there is a route between two vertexes \n C: to print the shortest route between two vertexes\n D: to close program");
-    }
-    if(a=='C')
-    {
-      C(mat, i, j);
-    }
-
+    printf("enter\n A: to read new matrix\n B: to calculate if there is a route between two vertexes \n C: to print the shortest route between two vertexes\n D: to close program");
+    scanf("%c",&a);
   }
-
   return 0;
 }
