@@ -1,15 +1,14 @@
 #include "my_mat.h"
 #include <stdio.h>
 #include <stdlib.h> 
+#include <stdbool.h>
 
  void A(){
      for(int i=0;i<V;i++){
          for(int j=0;j<V;j++){
              scanf("%d",&mat[i][j]);
-             if(mat[i][j]==0)
-             {
-                if(i!=j)
-                {
+             if(mat[i][j]==0){
+                if(i!=j){
                     mat[i][j] = INF;
                 }
              }
@@ -17,28 +16,23 @@
      }
  }
 
- void B(int i,int j)
- {
-     
+  bool B(int i,int j){  
      if(mat[i][j] != 0 && mat[i][j] != INF){
-         printf("True");
+         return true;
      }
      else{
-         printf("False");
+         return false;
      }
  }
 
- void C(int i, int j){
+ int C(int i, int j){
      if(mat[i][j] != 0 && mat[i][j] != INF){
-         printf("%d",mat[i][j]);
+        return mat[i][j];
      }
-     else{
-         printf("-1");
-     }
+    return -1;
  }
 
- int floydWarshall(int graph[V][V])
-{
+ int floydWarshall(int graph[V][V]){
     /* dist[][] will be the output matrix that will finally have the shortest
       distances between every pair of vertices */
     int ans[V][V], i, j, k;
@@ -56,15 +50,12 @@
       vertices in set {0, 1, 2, .. k-1} as intermediate vertices.
       ----> After the end of an iteration, vertex no. k is added to the set of
       intermediate vertices and the setbecomes {0, 1, 2, .. k} */
-    for (k = 0; k < V; k++)
-    {
+    for (k = 0; k < V; k++){
         // Pick all vertices as source one by one
-        for (i = 0; i < V; i++)
-        {
+        for (i = 0; i < V; i++){
             // Pick all vertices as destination for the
             // above picked source
-            for (j = 0; j < V; j++)
-            {
+            for (j = 0; j < V; j++){
                 // If vertex k is on the shortest path from
                 // i to j, then update the value of dist[i][j]
                 if (ans[i][k] + ans[k][j] < ans[i][j])
