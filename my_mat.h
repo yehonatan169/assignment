@@ -21,4 +21,4 @@ void C(int i,int j);
 
 /* floydWarshall algorithem to find the shortest path for evrey 2 vertics
 */ 
-int** floydWarshall (int graph[10][10]);
+int floydWarshall (int graph[10][10]);

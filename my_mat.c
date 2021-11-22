@@ -5,7 +5,7 @@
  void A(){
      for(int i=0;i<V;i++){
          for(int j=0;j<V;j++){
-              mat[i][j]=scanf("%d");
+             scanf("%d",&mat[i][j]);
              if(mat[i][j]==0)
              {
                 if(i!=j)
@@ -37,7 +37,7 @@
      }
  }
 
- int** floydWarshall (int graph[V][V])
+ int floydWarshall(int graph[V][V])
 {
     /* dist[][] will be the output matrix that will finally have the shortest
       distances between every pair of vertices */
@@ -73,5 +73,5 @@
         }
     }
  
-    return ans;
+    return **ans;
 }
