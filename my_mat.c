@@ -4,7 +4,6 @@
 #include <stdbool.h>
 
  void A(){
-     prinf("A ");
      for(int i=0;i<V;i++){
          for(int j=0;j<V;j++){
              scanf("%d",&mat[i][j]);
@@ -18,7 +17,7 @@
  }
 
   bool B(int i,int j){  
-     if(mat[i][j] != 0 && mat[i][j] != INF){
+     if(ans[i][j] != 0 && ans[i][j] != INF){
          return true;
      }
      else{
@@ -27,16 +26,16 @@
  }
 
  int C(int i, int j){
-     if(mat[i][j] != 0 && mat[i][j] != INF){
-        return mat[i][j];
+     if(ans[i][j] != 0 && ans[i][j] != INF){
+        return ans[i][j];
      }
     return -1;
  }
 
- int floydWarshall(int graph[V][V]){
+ void floydWarshall(int graph[V][V]){
     /* dist[][] will be the output matrix that will finally have the shortest
       distances between every pair of vertices */
-    int ans[V][V], i, j, k;
+    int i, j, k;
  
     /* Initialize the solution matrix same as input graph matrix. Or
        we can say the initial values of shortest distances are based
@@ -64,6 +63,4 @@
             }
         }
     }
- 
-    return **ans;
 }

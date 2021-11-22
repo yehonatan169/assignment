@@ -3,7 +3,7 @@
 #include <limits.h>
 #include <stdbool.h>
 
-#define INF INT_MAX
+#define INF 99999
 #define V 10
 int mat [V][V];
 int ans [V][V];
@@ -22,4 +22,4 @@ int C(int i,int j);
 
 /* floydWarshall algorithem to find the shortest path for evrey 2 vertics
 */ 
-int floydWarshall (int graph[10][10]);
+void floydWarshall (int graph[10][10]);

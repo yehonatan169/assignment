@@ -5,47 +5,45 @@
 
 int main(){
   char a;
-  int readed=0,i,j;
+  int i,j;
   //printf("enter\n A: to read matrix\n B: to calculate if there is a route between two vertexes \n C: to print the shortest route between two vertexes\n D: to close program");
   scanf("%c",&a);
   while(a!='D'){
     if(a=='A'){
       A();
-      ans[V][V] = floydWarshall(mat);
-      readed = 1;
+     floydWarshall(mat);
+    //  printf("\n");
+    //   for(int p=0;p<V;p++){
+    //     for(int q=0;q<V;q++){
+    //       printf("%d  ",ans[p][q]);
+    //   }
+    //   printf("\n");
+    // }
     }
     else{
-      if(readed==0){
-        //printf("error graph wasn't readed");
-      }
-      else{
         //printf("enter two vertexes\n");
-    
         if(a=='B'){
           scanf("%d",&i);
           scanf("%d",&j);
-          printf("B %d %d",i,j);
           if(B(i, j)){
-            printf("True/n");
+            printf("True\n");
           }
           else{
-            printf("False/n");
+            printf("False\n");
           }
         }
         if(a=='C'){
           scanf("%d",&i);
           scanf("%d",&j);
-          printf("B %d %d",i,j);
           int x = C(i, j); 
           if( x != -1){
-            printf("%d/n",x);
+            printf("%d\n",x);
           }
           else{
-            printf("-1/n");
+            printf("-1\n");
           }
         }
       }
-    }
     //printf("enter\n A: to read new matrix\n B: to calculate if there is a route between two vertexes \n C: to print the shortest route between two vertexes\n D: to close program");
     scanf("%c",&a);
   }
