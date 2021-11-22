@@ -4,6 +4,7 @@
 #include <stdbool.h>
 
  void A(){
+     prinf("A ");
      for(int i=0;i<V;i++){
          for(int j=0;j<V;j++){
              scanf("%d",&mat[i][j]);

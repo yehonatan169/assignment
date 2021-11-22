@@ -24,6 +24,7 @@ int main(){
         if(a=='B'){
           scanf("%d",&i);
           scanf("%d",&j);
+          printf("B %d %d",i,j);
           if(B(i, j)){
             printf("True/n");
           }
@@ -34,6 +35,7 @@ int main(){
         if(a=='C'){
           scanf("%d",&i);
           scanf("%d",&j);
+          printf("B %d %d",i,j);
           int x = C(i, j); 
           if( x != -1){
             printf("%d/n",x);
