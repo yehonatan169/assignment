@@ -25,16 +25,18 @@ int main()
       else
       {
         //printf("enter two vertexes\n");
-        scanf("%d",&i);
-        scanf("%d",&j);
     
         if(a=='B')
         {
+          scanf("%d",&i);
+          scanf("%d",&j);
           B(i, j);
         }
         if(a=='C')
         {
-           C(i, j);
+          scanf("%d",&i);
+          scanf("%d",&j);
+          C(i, j);
         }
       }
     }
